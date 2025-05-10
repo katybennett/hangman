@@ -33,7 +33,7 @@ function App() {
         <button onClick={handleStartNewGameClick}>Start New game</button>
         {gameStarted && (
           <div>
-            <WordBox wordToGuess={wordToGuess} />
+            <WordBox wordToGuess={wordToGuess} guessedLetters={guessedLetters}/>
             <Keyboard
               guessedLetters={guessedLetters}
               onClickLetter={handleClickLetter}

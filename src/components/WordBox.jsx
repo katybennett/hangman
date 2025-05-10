@@ -1,12 +1,12 @@
 function WordBox(props) {
-  const { wordToGuess } = props;
+  const { wordToGuess, guessedLetters } = props;
 
   return (
     <div id="word-box">
       {wordToGuess.split("").map((char, i) => {
         return (
           <span key={i} className="word-char">
-            _
+            {guessedLetters.includes(char) ? char : "_"}
           </span>
         );
       })}
