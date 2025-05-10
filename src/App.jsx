@@ -1,6 +1,7 @@
 import { useState } from "react";
 import WordBox from "./components/WordBox";
 import Keyboard from "./components/Keyboard";
+import UserGuesses from "./components/UserGuesses";
 
 const words = ["CHESSE", "MARATHON", "TABLE", "BISCUIT"];
 
@@ -18,14 +19,13 @@ function App() {
     const word = selectRandomWord();
     setWordToGuess(word);
     setGameStarted(!gameStarted);
-    console.log(word)
   };
 
   const handleClickLetter = (event) => {
-    console.log(event.target.value)
     const letter = event.target.value;
     setGuessedLetters([...guessedLetters, letter]);
   };
+  
 
 
   return (
@@ -40,6 +40,7 @@ function App() {
               guessedLetters={guessedLetters}
               onClickLetter={handleClickLetter}
             />
+            <UserGuesses wordToGuess={wordToGuess} guessedLetters={guessedLetters}/>
           </div>
         )} 
       </div>

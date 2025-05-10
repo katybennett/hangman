@@ -96,3 +96,22 @@ button:focus-visible {
   cursor: pointer;
   transition: border-color 0.25s;
 }
+
+#user-guesses {
+  border: solid 1px #7fdaf1;
+  border-radius: 4px;
+  font-size: 28px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.user-guesses-corect {
+  margin: 0 6px;
+  color: rgb(186, 240, 99);
+  font-weight: bold;
+}
+.user-guesses-incorect {
+  margin: 0 6px;
+  color: rgb(240, 121, 121);
+  text-decoration: line-through;
+}
