@@ -3,8 +3,12 @@ function WordBox(props) {
 
   return (
     <div id="word-box">
-      {wordToGuess.split("").map((char) => {
-        return <span className="word-char">_</span>;
+      {wordToGuess.split("").map((char, i) => {
+        return (
+          <span key={i} className="word-char">
+            _
+          </span>
+        );
       })}
     </div>
   );

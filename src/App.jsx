@@ -12,11 +12,17 @@ const selectRandomWord = () => {
 function App() {
   const [wordToGuess, setWordToGuess] = useState(null);
   const [gameStarted, setGameStarted] = useState(false);
+  const [guessedLetters, setGuessedLetters] = useState([]);
 
   const handleStartNewGameClick = () => {
     const word = selectRandomWord();
     setWordToGuess(word);
     setGameStarted(true);
+  };
+
+  const handleClickLetter = (event) => {
+    const letter = event.target.value;
+    setGuessedLetters([...guessedLetters, letter]);
   };
 
   return (
@@ -27,7 +33,10 @@ function App() {
         {gameStarted && (
           <div>
             <WordBox wordToGuess={wordToGuess} />
-            <Keyboard />
+            <Keyboard
+              guessedLetters={guessedLetters}
+              onClickLetter={handleClickLetter}
+            />
           </div>
         )}
       </div>

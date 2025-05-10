@@ -1,13 +1,57 @@
-function Keyboard() {
+function Keyboard(props) {
+  const { guessedLetters, onClickLetter } = props;
+
   return (
     <div>
       <div>
-        <button>A</button>
-        <button>B</button>
-        <button>C</button>
-        <button>D</button>
-        <button>E</button>
-        <button>F</button>
+        <button
+          onClick={onClickLetter}
+          disabled={guessedLetters.includes("A")}
+          value="A"
+          key="A"
+        >
+          A
+        </button>
+        <button
+          onClick={onClickLetter}
+          disabled={guessedLetters.includes("B")}
+          value="B"
+          key="B"
+        >
+          B
+        </button>
+        <button
+          onClick={onClickLetter}
+          disabled={guessedLetters.includes("C")}
+          value="C"
+          key="C"
+        >
+          C
+        </button>
+        <button
+          onClick={onClickLetter}
+          disabled={guessedLetters.includes("D")}
+          value="D"
+          key="D"
+        >
+          D
+        </button>
+        <button
+          onClick={onClickLetter}
+          disabled={guessedLetters.includes("E")}
+          value="E"
+          key="E"
+        >
+          E
+        </button>
+        <button
+          onClick={onClickLetter}
+          disabled={guessedLetters.includes("F")}
+          value="F"
+          key="F"
+        >
+          F
+        </button>
       </div>
       <div>
         <button>G</button>
