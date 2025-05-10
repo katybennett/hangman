@@ -1,88 +1,23 @@
 function Keyboard(props) {
   const { guessedLetters, onClickLetter } = props;
 
+  const alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+
+  
   return (
-    <div>
       <div>
-        <button
-          onClick={onClickLetter}
-          disabled={guessedLetters.includes("A")}
-          value="A"
-          key="A"
-        >
-          A
-        </button>
-        <button
-          onClick={onClickLetter}
-          disabled={guessedLetters.includes("B")}
-          value="B"
-          key="B"
-        >
-          B
-        </button>
-        <button
-          onClick={onClickLetter}
-          disabled={guessedLetters.includes("C")}
-          value="C"
-          key="C"
-        >
-          C
-        </button>
-        <button
-          onClick={onClickLetter}
-          disabled={guessedLetters.includes("D")}
-          value="D"
-          key="D"
-        >
-          D
-        </button>
-        <button
-          onClick={onClickLetter}
-          disabled={guessedLetters.includes("E")}
-          value="E"
-          key="E"
-        >
-          E
-        </button>
-        <button
-          onClick={onClickLetter}
-          disabled={guessedLetters.includes("F")}
-          value="F"
-          key="F"
-        >
-          F
-        </button>
+        {alphabet.map((letter, i) => (
+          <button
+            onClick={onClickLetter}
+            disabled={guessedLetters.includes(letter)}
+            value={letter}
+            key={i}
+            >{alphabet[i]}
+          </button>
+        ))}
       </div>
-      <div>
-        <button>G</button>
-        <button>H</button>
-        <button>I</button>
-        <button>J</button>
-        <button>K</button>
-        <button>L</button>
-      </div>
-      <div>
-        <button>M</button>
-        <button>N</button>
-        <button>O</button>
-        <button>P</button>
-        <button>Q</button>
-        <button>R</button>
-      </div>
-      <div>
-        <button>S</button>
-        <button>T</button>
-        <button>U</button>
-        <button>V</button>
-        <button>W</button>
-        <button>X</button>
-      </div>
-      <div>
-        <button>Y</button>
-        <button>Z</button>
-      </div>
-    </div>
   );
 }
+
 
 export default Keyboard;
