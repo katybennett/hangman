@@ -21,7 +21,6 @@ function App() {
   };
 
   const handleClickLetter = (event) => {
-    console.log(event.target.value)
     const letter = event.target.value;
     setGuessedLetters([...guessedLetters, letter]);
   };
