@@ -17,19 +17,22 @@ function App() {
   const handleStartNewGameClick = () => {
     const word = selectRandomWord();
     setWordToGuess(word);
-    setGameStarted(true);
+    setGameStarted(!gameStarted);
+    console.log(word)
   };
 
   const handleClickLetter = (event) => {
+    console.log(event.target.value)
     const letter = event.target.value;
     setGuessedLetters([...guessedLetters, letter]);
   };
+
 
   return (
     <>
       <div>
         <h1>Hangman</h1>
-        <button onClick={handleStartNewGameClick}>Start New game</button>
+        <button onClick={handleStartNewGameClick} disabled={gameStarted===true}>{gameStarted===true ? "Play!" : "Start New Game"}</button>
         {gameStarted && (
           <div>
             <WordBox wordToGuess={wordToGuess} guessedLetters={guessedLetters}/>
