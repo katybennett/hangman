@@ -1,10 +1,12 @@
 import { STATE } from "../constants";
 
-function Status({ livesRemaining, gameState }) {
+function Status(props) {
+  const { livesRemaining, gameState } = props;
+
   let message;
 
   if (gameState === STATE.GAME_OVER) {
-    message = "Game over!";
+    message = "You lost!";
   } else if (gameState === STATE.WON) {
     message = "Congratulations, you win!";
   } else {

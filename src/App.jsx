@@ -3,13 +3,13 @@ import WordBox from "./components/WordBox";
 import Keyboard from "./components/Keyboard";
 import UserGuesses from "./components/UserGuesses";
 import Status from "./components/Status";
-import { STATE } from "./constants";
+import { INITIAL_LIVES, STATE, WORDS } from "./constants";
+import HangmanGraph from "./components/HangmanGraph";
 
-const words = ["CHEESE", "MARATHON", "TABLE", "BISCUIT"];
 
 const selectRandomWord = () => {
-  const randomIndex = Math.floor(Math.random() * words.length);
-  return words[randomIndex];
+  const randomIndex = Math.floor(Math.random() * WORDS.length);
+  return WORDS[randomIndex];
 };
 
 function App() {
@@ -40,7 +40,7 @@ function App() {
     const word = selectRandomWord();
     setWordToGuess(word);
     setGameState(STATE.IN_PROGRESS);
-    setLivesRemaining(6);
+    setLivesRemaining(INITIAL_LIVES);
     setGuessedLetters([]);
   };
 
@@ -78,6 +78,7 @@ function App() {
               guessedLetters={guessedLetters}
             />
             <Status gameState={gameState} livesRemaining={livesRemaining} />
+            <HangmanGraph livesRemaining={livesRemaining} />
           </div>
         )}
       </div>

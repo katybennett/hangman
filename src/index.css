@@ -114,3 +114,9 @@ button:focus-visible {
   margin: 0 6px;
   color: rgb(240, 121, 121);
 }
+
+#hangman-image {
+  text-align: left;
+  width: 140px;
+  margin: auto;
+}
