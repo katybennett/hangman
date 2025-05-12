@@ -25,7 +25,7 @@ function App() {
   }, [livesRemaining]);
 
   useEffect(() => {
-    if (STATE.ACTIVE) {
+    if (gameState === STATE.IN_PROGRESS) {
       const allLettersGuessed = wordToGuess
         .split("")
         .every((char) => guessedLetters.includes(char));

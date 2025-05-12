@@ -1,13 +1,19 @@
 import { STATE } from "../constants";
 
 function Status({ livesRemaining, gameState }) {
+  let message;
+
+  if (gameState === STATE.GAME_OVER) {
+    message = "Game over!";
+  } else if (gameState === STATE.WON) {
+    message = "Congratulations, you win!";
+  } else {
+    message = `Lives remaining: ${livesRemaining}`;
+  }
+
   return (
     <div>
-      {gameState !== STATE.GAME_OVER ? (
-        <span id="status">Lives remaining: {livesRemaining}</span>
-      ) : (
-        <span>Game Over!</span>
-      )}
+      <span>{message}</span>
     </div>
   );
 }

@@ -10,7 +10,7 @@ function Keyboard(props) {
         {alphabet.map((letter, i) => (
           <button
             onClick={onClickLetter}
-            disabled={guessedLetters.includes(letter) || gameState === STATE.GAME_OVER}
+            disabled={guessedLetters.includes(letter) || gameState !== STATE.IN_PROGRESS}
             value={letter}
             key={i}
             >{alphabet[i]}
