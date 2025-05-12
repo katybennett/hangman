@@ -1,5 +1,7 @@
+import { STATE } from "../constants";
+
 function Keyboard(props) {
-  const { isGameOver, guessedLetters, onClickLetter } = props;
+  const { gameState, guessedLetters, onClickLetter } = props;
 
   const alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
 
@@ -8,7 +10,7 @@ function Keyboard(props) {
         {alphabet.map((letter, i) => (
           <button
             onClick={onClickLetter}
-            disabled={guessedLetters.includes(letter) || isGameOver}
+            disabled={guessedLetters.includes(letter) || gameState === STATE.GAME_OVER}
             value={letter}
             key={i}
             >{alphabet[i]}

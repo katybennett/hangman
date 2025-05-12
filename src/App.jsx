@@ -41,6 +41,7 @@ function App() {
     setWordToGuess(word);
     setGameState(STATE.IN_PROGRESS);
     setLivesRemaining(6);
+    setGuessedLetters([]);
   };
 
   const handleClickLetter = (event) => {
