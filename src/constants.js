@@ -18,3 +18,16 @@ export const hangmanStages = [
   "  _______\n |/      |\n |      (_)\n |      \\|/\n |       |\n |      / \n_|___",
   "  _______\n |/      |\n |      (_)\n |      \\|/\n |       |\n |      / \\\n_|___   GAME OVER",
 ];
+
+export const hangmanFree = [
+  `
+  _______
+ |/      
+ |      (_)
+ |     \\ / 
+ |      |  
+ |     / \\ 
+_|________________
+        HANGMAN IS FREE, YOU LIBERATE HIM!
+`
+]
