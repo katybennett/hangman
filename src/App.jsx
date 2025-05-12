@@ -3,8 +3,9 @@ import WordBox from "./components/WordBox";
 import Keyboard from "./components/Keyboard";
 import UserGuesses from "./components/UserGuesses";
 import Status from "./components/Status";
+import { STATE } from "./constants";
 
-const words = ["CHESSE", "MARATHON", "TABLE", "BISCUIT"];
+const words = ["CHEESE", "MARATHON", "TABLE", "BISCUIT"];
 
 const selectRandomWord = () => {
   const randomIndex = Math.floor(Math.random() * words.length);
@@ -13,22 +14,32 @@ const selectRandomWord = () => {
 
 function App() {
   const [wordToGuess, setWordToGuess] = useState(null);
-  const [gameStarted, setGameStarted] = useState(false);
   const [guessedLetters, setGuessedLetters] = useState([]);
   const [livesRemaining, setLivesRemaining] = useState(null);
-  const [isGameOver, setIsGameOver] = useState(false);
-  
+  const [gameState, setGameState] = useState(STATE.NOT_STARTED);
 
   useEffect(() => {
     if (livesRemaining === 0) {
-      setIsGameOver(true);
+      setGameState(STATE.GAME_OVER);
     }
   }, [livesRemaining]);
+
+  useEffect(() => {
+    if (STATE.ACTIVE) {
+      const allLettersGuessed = wordToGuess
+        .split("")
+        .every((char) => guessedLetters.includes(char));
+
+      if (allLettersGuessed) {
+        setGameState(STATE.WON);
+      }
+    }
+  }, [guessedLetters]);
 
   const handleStartNewGameClick = () => {
     const word = selectRandomWord();
     setWordToGuess(word);
-    setGameStarted(!gameStarted);
+    setGameState(STATE.IN_PROGRESS);
     setLivesRemaining(6);
   };
 
@@ -46,18 +57,18 @@ function App() {
         <h1>Hangman</h1>
         <button
           onClick={handleStartNewGameClick}
-          disabled={gameStarted === true}
+          disabled={gameState === STATE.IN_PROGRESS}
         >
-          {gameStarted === true ? "Play!" : "Start New Game"}
+          {gameState === STATE.IN_PROGRESS ? "Play!" : "Start New Game"}
         </button>
-        {gameStarted && (
+        {gameState !== STATE.NOT_STARTED && (
           <div>
             <WordBox
               wordToGuess={wordToGuess}
               guessedLetters={guessedLetters}
             />
             <Keyboard
-              isGameOver={isGameOver}
+              gameState={gameState}
               guessedLetters={guessedLetters}
               onClickLetter={handleClickLetter}
             />
@@ -65,7 +76,7 @@ function App() {
               wordToGuess={wordToGuess}
               guessedLetters={guessedLetters}
             />
-            <Status isGameOver={isGameOver} livesRemaining={livesRemaining} />
+            <Status gameState={gameState} livesRemaining={livesRemaining} />
           </div>
         )}
       </div>
