@@ -113,5 +113,4 @@ button:focus-visible {
 .user-guesses-incorect {
   margin: 0 6px;
   color: rgb(240, 121, 121);
-  text-decoration: line-through;
 }
