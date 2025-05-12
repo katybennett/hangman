@@ -1,5 +1,13 @@
-function Status(props) {
-  return <span id="status">Lives remaining: {props.livesRemaining}</span>;
+function Status({ livesRemaining, isGameOver }) {
+  return (
+    <div>
+      {!isGameOver ? (
+        <span id="status">Lives remaining: {livesRemaining}</span>
+      ) : (
+        <span>Game Over!</span>
+      )}
+    </div>
+  );
 }
 
 export default Status;

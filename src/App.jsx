@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import WordBox from "./components/WordBox";
 import Keyboard from "./components/Keyboard";
 import UserGuesses from "./components/UserGuesses";
@@ -16,6 +16,14 @@ function App() {
   const [gameStarted, setGameStarted] = useState(false);
   const [guessedLetters, setGuessedLetters] = useState([]);
   const [livesRemaining, setLivesRemaining] = useState(null);
+  const [isGameOver, setIsGameOver] = useState(false);
+  
+
+  useEffect(() => {
+    if (livesRemaining === 0) {
+      setIsGameOver(true);
+    }
+  }, [livesRemaining]);
 
   const handleStartNewGameClick = () => {
     const word = selectRandomWord();
@@ -49,6 +57,7 @@ function App() {
               guessedLetters={guessedLetters}
             />
             <Keyboard
+              isGameOver={isGameOver}
               guessedLetters={guessedLetters}
               onClickLetter={handleClickLetter}
             />
@@ -56,7 +65,7 @@ function App() {
               wordToGuess={wordToGuess}
               guessedLetters={guessedLetters}
             />
-            <Status livesRemaining={livesRemaining} />
+            <Status isGameOver={isGameOver} livesRemaining={livesRemaining} />
           </div>
         )}
       </div>
