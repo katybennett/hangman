@@ -105,12 +105,12 @@ button:focus-visible {
   margin-bottom: 10px;
 }
 
-.user-guesses-corect {
+.user-guesses-correct {
   margin: 0 6px;
   color: rgb(186, 240, 99);
   font-weight: bold;
 }
-.user-guesses-incorect {
+.user-guesses-incorrect {
   margin: 0 6px;
   color: rgb(240, 121, 121);
 }

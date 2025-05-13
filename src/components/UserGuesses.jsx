@@ -8,8 +8,8 @@ function UserGuesses(props) {
           key={index}
           className={
             wordToGuess.includes(letter)
-              ? "user-guesses-corect"
-              : "user-guesses-incorect"
+              ? "user-guesses-correct"
+              : "user-guesses-incorrct"
           }
         >
           {letter}
