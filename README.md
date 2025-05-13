@@ -8,12 +8,12 @@ Guess the hidden word before the hangman drawing is complete and celebrate your 
 
 ## 🎮 Features
 
-- 🔁 Start New Game Button 
-- 🧠 Randomly selected word from a list that feeds the App
-- ✅ 7-stage ASCII art Hangman depending of Lives Remaining
-- 🎯 Tracks correct and incorrect guesses, and updated Lives Reamining accordinly
-- 🎉 Victory screen when the word is guessed
-- 💀 Game Over screen when player run out of lives
+- Start New Game Button 
+- Randomly selected word from a list that feeds the App
+- 7-stage ASCII art Hangman depending of Lives Remaining
+- Tracks correct and incorrect guesses, and updated Lives Reamining accordinly
+- Victory screen when the word is guessed
+- Game Over screen when player run out of lives
 
 ---
 
