@@ -5,8 +5,6 @@ export const STATE = {
   WON: "won",
 };
 
-export const WORDS = ["CHEESE", "MARATHON", "TABLE", "BISCUIT"];
-
 export const INITIAL_LIVES = 6;
 
 export const hangmanStages = [
@@ -21,11 +19,118 @@ export const hangmanStages = [
 
 export const hangmanFree = [
   "  _______\n" +
-  " |/      |\n" +
-  " |       \n" +
-  " |      (_)\n" +
-  " |      \\ / \n" +
-  " |       |  \n" +
-  "_|___   / \\ \n" +
-  "        HANGMAN IS FREE, YOU LIBERATED HIM!"
+    " |/      |\n" +
+    " |       \n" +
+    " |      (_)\n" +
+    " |      \\ / \n" +
+    " |       |  \n" +
+    "_|___   / \\ \n" +
+    "        HANGMAN IS FREE, YOU LIBERATED HIM!",
+];
+
+export const WORDS = [
+  "CHEESE",
+  "MARATHON",
+  "TABLE",
+  "BISCUIT",
+  "APPLE",
+  "BANANA",
+  "CARROT",
+  "DAISY",
+  "ELEPHANT",
+  "FRANCE",
+  "GUITAR",
+  "HAMMER",
+  "ISLAND",
+  "JUPITER",
+  "KITTEN",
+  "LANTERN",
+  "MOUNTAIN",
+  "NEEDLE",
+  "ORANGE",
+  "PYRAMID",
+  "QUARTZ",
+  "ROCKET",
+  "SPOON",
+  "TUNNEL",
+  "UMBRELLA",
+  "VIOLIN",
+  "WIDGET",
+  "XYLOPHONE",
+  "YOGURT",
+  "ZEBRA",
+  "AIRPLANE",
+  "BALLOON",
+  "CANDLE",
+  "DINOSAUR",
+  "EAGLE",
+  "FOSSIL",
+  "GIRAFFE",
+  "HONEY",
+  "INSECT",
+  "JUNGLE",
+  "KANGAROO",
+  "LADDER",
+  "MAGNET",
+  "NECKLACE",
+  "OXYGEN",
+  "PAINTER",
+  "QUILT",
+  "RIVER",
+  "SADDLE",
+  "TIGER",
+  "UNICORN",
+  "VULTURE",
+  "WALRUS",
+  "YACHT",
+  "ZUCCHINI",
+  "ANCHOR",
+  "BASKET",
+  "CIRCUS",
+  "DOLPHIN",
+  "ENGINE",
+  "FIREMAN",
+  "GOBLIN",
+  "HOSPITAL",
+  "ICEBERG",
+  "JACKET",
+  "KEYBOARD",
+  "LIZARD",
+  "MIRROR",
+  "NUGGET",
+  "OCTOPUS",
+  "PENGUIN",
+  "QUICKSAND",
+  "RAINBOW",
+  "SATELLITE",
+  "TORNADO",
+  "UNIVERSE",
+  "VILLAGE",
+  "WILLOW",
+  "XYLEM",
+  "YARDSTICK",
+  "ZIGZAG",
+  "ALMOND",
+  "BOTTLE",
+  "CRYSTAL",
+  "DRAGON",
+  "EGGPLANT",
+  "FURNACE",
+  "GRAVITY",
+  "HARVEST",
+  "ICECREAM",
+  "JASMINE",
+  "KOALA",
+  "LIGHTHOUSE",
+  "MUSTARD",
+  "NOTEBOOK",
+  "OPERA",
+  "PLAZA",
+  "QUIVER",
+  "RACKET",
+  "SPHERE",
+  "TRACTOR",
+  "UPRIGHT",
+  "VINTAGE",
+  "WAGON",
 ];
