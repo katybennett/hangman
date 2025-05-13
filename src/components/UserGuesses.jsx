@@ -9,7 +9,7 @@ function UserGuesses(props) {
           className={
             wordToGuess.includes(letter)
               ? "user-guesses-correct"
-              : "user-guesses-incorrct"
+              : "user-guesses-incorrect"
           }
         >
           {letter}
