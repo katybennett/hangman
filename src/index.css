@@ -98,7 +98,8 @@ button:focus-visible {
 }
 
 #user-guesses {
-  border: solid 1px #7fdaf1;
+  border: solid 1px #ace1ee;
+  background-color: #f0faff;
   border-radius: 4px;
   font-size: 28px;
   padding: 10px;
@@ -107,7 +108,7 @@ button:focus-visible {
 
 .user-guesses-correct {
   margin: 0 6px;
-  color: rgb(186, 240, 99);
+  color: rgb(163, 206, 95);
   font-weight: bold;
 }
 .user-guesses-incorrect {
