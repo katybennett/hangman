@@ -75,10 +75,11 @@ button:focus-visible {
 
 #word-box {
   border: solid 1px #ccc;
+  background-color:#f2f2f2;
   border-radius: 4px;
   font-size: 28px;
   padding: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .word-char {
@@ -92,18 +93,16 @@ button:focus-visible {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #82ddc2;
   cursor: pointer;
   transition: border-color 0.25s;
 }
 
 #user-guesses {
-  border: solid 1px #ace1ee;
   background-color: #f0faff;
   border-radius: 4px;
   font-size: 28px;
   padding: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .user-guesses-correct {
@@ -120,4 +119,8 @@ button:focus-visible {
   text-align: left;
   width: 140px;
   margin: auto;
+}
+
+#keyboard {
+  margin-bottom: 20px;
 }

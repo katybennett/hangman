@@ -77,8 +77,10 @@ function App() {
               wordToGuess={wordToGuess}
               guessedLetters={guessedLetters}
             />
+            <div>
             <Status gameState={gameState} livesRemaining={livesRemaining} />
             <HangmanGraph gameState={gameState} livesRemaining={livesRemaining} />
+            </div>
           </div>
         )}
       </div>
