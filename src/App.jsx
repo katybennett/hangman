@@ -78,7 +78,7 @@ function App() {
               guessedLetters={guessedLetters}
             />
             <Status gameState={gameState} livesRemaining={livesRemaining} />
-            <HangmanGraph livesRemaining={livesRemaining} />
+            <HangmanGraph gameState={gameState} livesRemaining={livesRemaining} />
           </div>
         )}
       </div>

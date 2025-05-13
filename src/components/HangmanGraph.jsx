@@ -1,13 +1,13 @@
-import { hangmanStages, INITIAL_LIVES } from "../constants";
+import { hangmanStages, hangmanFree, INITIAL_LIVES, STATE } from "../constants";
 
 function HangmanGraph(props) {
-  const { livesRemaining } = props;
+  const { gameState, livesRemaining } = props;
 
   const index = INITIAL_LIVES - livesRemaining;
 
   return (
     <div id="hangman-image">
-      <pre>{hangmanStages[index]}</pre>
+      <pre>{gameState === STATE.WON ? hangmanFree[0] : hangmanStages[index]} </pre>
     </div>
   );
 }

@@ -20,14 +20,12 @@ export const hangmanStages = [
 ];
 
 export const hangmanFree = [
-  `
-  _______
- |/      
- |      (_)
- |     \\ / 
- |      |  
- |     / \\ 
-_|________________
-        HANGMAN IS FREE, YOU LIBERATE HIM!
-`
-]
+  "  _______\n" +
+  " |/      |\n" +
+  " |       \n" +
+  " |      (_)\n" +
+  " |      \\ / \n" +
+  " |       |  \n" +
+  "_|___   / \\ \n" +
+  "        HANGMAN IS FREE, YOU LIBERATED HIM!"
+];
