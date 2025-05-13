@@ -5,7 +5,7 @@ import UserGuesses from "./components/UserGuesses";
 import Status from "./components/Status";
 import { INITIAL_LIVES, STATE, WORDS } from "./constants";
 import HangmanGraph from "./components/HangmanGraph";
-
+import hangman from "./assets/hangman.png";
 
 const selectRandomWord = () => {
   const randomIndex = Math.floor(Math.random() * WORDS.length);
@@ -62,7 +62,11 @@ function App() {
         >
           {gameState === STATE.IN_PROGRESS ? "Play!" : "Start New Game"}
         </button>
-        {gameState !== STATE.NOT_STARTED && (
+        {gameState === STATE.NOT_STARTED ? (
+          <div>
+            <img id="intro-image" src={hangman} />
+          </div>
+        ) : (
           <div>
             <WordBox
               wordToGuess={wordToGuess}
@@ -78,8 +82,11 @@ function App() {
               guessedLetters={guessedLetters}
             />
             <div>
-            <Status gameState={gameState} livesRemaining={livesRemaining} />
-            <HangmanGraph gameState={gameState} livesRemaining={livesRemaining} />
+              <Status gameState={gameState} livesRemaining={livesRemaining} />
+              <HangmanGraph
+                gameState={gameState}
+                livesRemaining={livesRemaining}
+              />
             </div>
           </div>
         )}

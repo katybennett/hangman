@@ -75,7 +75,7 @@ button:focus-visible {
 
 #word-box {
   border: solid 1px #ccc;
-  background-color:#f2f2f2;
+  background-color: #f2f2f2;
   border-radius: 4px;
   font-size: 28px;
   padding: 10px;
@@ -123,4 +123,10 @@ button:focus-visible {
 
 #keyboard {
   margin-bottom: 20px;
+}
+
+#intro-image {
+  padding: 10px;
+  margin: 20px auto;
+  opacity: 0.8;
 }
